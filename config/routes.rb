@@ -1,4 +1,6 @@
 Note::Application.routes.draw do
+  resources :todos
+
   get "home/index"
 
   get "home/view"
