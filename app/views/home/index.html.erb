@@ -189,16 +189,13 @@
       <div id="sidebar">
         <ul id="sidebar-items">
           <li>
-            <h3>Browse the documentation</h3>
-            
-                  <%= render 'latest' %>
-            
+              <%= render 'latest' %>        
           </li>
         </ul>
       </div>
 
       <div id="content">
-         <%- if @todos.empty? %>
+        <%- if @todos.empty? %>
             <h2>No TODOS to display</h2>
             <%= link_to "New TODO", new_todo_path %>
         <%- else %>
@@ -206,46 +203,14 @@
             <%- @todos.each do |todo|%>
                 <p><%= link_to todo.name, '/home/view/'+todo.id.to_s %></p>
             <%- end %>
-        <%-end %>
-        <div class="span2">
-        <%= link_to "New TODO", new_todo_path ,:class =>"btn btn-large btn-block" %>
-         <%= link_to "Manage TODOs", todos_path ,:class =>"btn btn-large btn-block" %>
-        </div>
-    </div>
-
-
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
+        
+            <div class="span2">
+                <%= link_to "New TODO", new_todo_path %>
+                <%= link_to "Manage TODOs", todos_path %>
+            </div>
+        <%-end %>  
       </div>
-
       <div id="footer">&nbsp;</div>
     </div>
   </body>
 </html>
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>

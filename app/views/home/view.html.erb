@@ -1,2 +1,6 @@
-<h1>Home#view</h1>
-<p>Find me in app/views/home/view.html.erb</p>
+<h2><%= @todo.name %></h2>
+<p><%= @todo.note %></p>
+<div class="span2">
+    <%= link_to "Back", root_path  %>
+    <%= link_to "Edit", edit_todo_path %>
+</div>
