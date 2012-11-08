@@ -1,9 +1,11 @@
 Note::Application.routes.draw do
   resources :todos
 
-  get "home/index"
+  get "home/index"=> "home#index", :as => :root
+    
+  match "home/view/:id" => "home#view"
 
-  get "home/view"
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
