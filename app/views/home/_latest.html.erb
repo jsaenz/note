@@ -1,0 +1,4 @@
+<h2>Latest TODOS</h2>
+<% @latest_todos.each do |latest|%>
+    <p><%= link_to latest.name, '/home/view/'+latest.id.to_s %></p>
+<%-end %>
