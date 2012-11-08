@@ -2,7 +2,7 @@ Note::Application.routes.draw do
   resources :todos
 
   get "home/index"=> "home#index", :as => :root
-    
+  match "/" => "home#index"  
   match "home/view/:id" => "home#view"
 
   
