@@ -41,6 +41,7 @@ class TodosController < ApplicationController
   # POST /todos.json
   def create
     @todo = Todo.new(params[:todo])
+    @todo.viewed_at = Time.now.utc
 
     respond_to do |format|
       if @todo.save
@@ -57,7 +58,7 @@ class TodosController < ApplicationController
   # PUT /todos/1.json
   def update
     @todo = Todo.find(params[:id])
-
+    @todo.viewed_at = Time.now.utc
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
         format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
